@@ -1,6 +1,6 @@
 /* eslint-disable arrow-parens */
 
-import togglePopups from './togglePopups';
+import togglePopups from "./togglePopups";
 
 const buttonWide = () => {
   const buttons = document.querySelectorAll(".button_wide"),
@@ -12,6 +12,5 @@ const buttonWide = () => {
     });
   });
 };
-
 
 export default buttonWide;
