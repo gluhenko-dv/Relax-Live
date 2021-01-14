@@ -14,7 +14,6 @@ import sliderPortfolio from "./modules/sliderPortfolio";
 import popupRepairTypes from "./modules/popupRepairTypes";
 import maskPhone from "./modules/phoneMask";
 import sliderCarouselFunc from "./modules/sliderCarousel";
-//открытие/закрытие меню
 
 //togglePopups();
 
@@ -46,5 +45,3 @@ popupRepairTypes();
 sliderCarouselFunc();
 
 maskPhone();
-
-ts();

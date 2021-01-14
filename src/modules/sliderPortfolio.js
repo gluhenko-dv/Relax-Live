@@ -13,8 +13,8 @@ const sliderPortfolio = () => {
         buttonPrev = document.getElementById("portfolio-arrow_left");
 
       let count = 0,
-        maxCount = slideTab.length - 1,
-        whidthTab = slideTab[0].offsetWidth;
+        maxCount = slideTab.length - 1;
+      const whidthTab = slideTab[0].offsetWidth;
 
       if (window.screen.width > 1140) {
         maxCount -= 2;
@@ -25,6 +25,7 @@ const sliderPortfolio = () => {
             (item) =>
               (item.style.transform = `translateX(-${count * whidthTab}px)`)
           );
+          // eslint-disable-next-line no-use-before-define
           checkCount();
         },
         checkCount = () => {
