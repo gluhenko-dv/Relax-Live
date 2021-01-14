@@ -200,10 +200,6 @@
         "functions": false
       }
     ],
-    "arrow-parens": [
-      "error",
-      "as-needed"
-    ],
     "arrow-body-style": [
       "error",
       "as-needed"

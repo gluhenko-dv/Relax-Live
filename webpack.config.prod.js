@@ -10,7 +10,7 @@ module.exports = {
     environment: {
       // The environment supports arrow functions ('() => { ... }').
       arrowFunction: false,
-    }
+    },
   },
   context: path.resolve(__dirname, "src"),
   mode: "production",

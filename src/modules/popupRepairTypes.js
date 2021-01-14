@@ -5,7 +5,7 @@ const popupRepairTypes = () => {
     ".popup-repair-types-content-table>table"
   );
 
-  //table.textContent = "";
+  table.textContent = "";
 
   const renderTable = (data) => {
     data.forEach((item) => {
@@ -23,7 +23,6 @@ const popupRepairTypes = () => {
       </tbody>`;
     });
   };
-
 
   const btnListener = () => {
     const btns = document.querySelectorAll(".popup-repair-types-nav__item");
