@@ -14,6 +14,7 @@ import sliderPortfolio from "./modules/sliderPortfolio";
 import popupRepairTypes from "./modules/popupRepairTypes";
 import maskPhone from "./modules/phoneMask";
 import sliderCarouselFunc from "./modules/sliderCarousel";
+import sendForm from "./modules/sendForm";
 
 //togglePopups();
 
@@ -45,3 +46,5 @@ popupRepairTypes();
 sliderCarouselFunc();
 
 maskPhone();
+
+sendForm();
