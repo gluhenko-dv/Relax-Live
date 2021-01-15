@@ -1,14 +1,10 @@
+import togglePopups from './togglePopups';
 const sendForm = () => {
   const statusMessageText = document.createElement("div");
+  const popupThank = document.querySelector('.popup-thank');
+
   const errorMessage = "Что-то пошло не так...",
-    loadMessage = `
-      <div class="spiner">
-        <div class="📦"></div>
-        <div class="📦"></div>
-        <div class="📦"></div>
-        <div class="📦"></div>
-        <div class="📦"></div>
-      </div>`,
+    loadMessage = "Отправляю ваше сообщение",
     succesMessage = "Спасибо! Мы скоро свяжемся с вами!",
     validMessage = "Заполните поля корректно!";
 
@@ -19,6 +15,7 @@ const sendForm = () => {
     allInputsForm.forEach((item) => {
       item.addEventListener("input", (e) => {
         const target = e.target;
+
         target.style.border = `none`;
         target.setCustomValidity("");
         if (target.name === "user_name") {
@@ -45,10 +42,8 @@ const sendForm = () => {
 
     const inputs = form.querySelectorAll("input");
     const errorValid = (input) => {
-      input.style.borderBottom = `4px solid red`;
-      input.setCustomValidity(
-        "Мне очень грустно, потому что ты ввел меня не правильно"
-      );
+      input.style.borderBottom = `4px solid red !important`;
+      input.setCustomValidity("Заполните корректно!");
       input.reportValidity();
       validStatus = false;
     };
@@ -56,13 +51,8 @@ const sendForm = () => {
       if (input.value === "") {
         errorValid(input);
       }
-      if (input.name === "user_name") {
+      if (input.name === "username") {
         if (input.value.length < 2) {
-          errorValid(input);
-        }
-      }
-      if (input.name === "user_phone") {
-        if (input.value.replace(/^\+?[78]([-()]*\d){10}$/, "") !== "") {
           errorValid(input);
         }
       }
@@ -76,24 +66,32 @@ const sendForm = () => {
   };
 
   const statusMessage = (status) => {
+    statusMessageText.classList.add("status-msg");
     statusMessageText.style.color = `white`;
     statusMessageText.style.fontSize = `18px`;
     statusMessageText.textContent = "Тут будет сообщение";
     statusMessageText.innerHTML = status;
     setTimeout(() => {
       statusMessageText.textContent = "";
+      statusMessageText.classList.remove("status-msg");
     }, 5000);
   };
 
   forms.forEach((form) => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
+      const checkBoxPolicy = form.querySelector(".checkbox__input");
       form.appendChild(statusMessageText);
-      statusMessage(loadMessage);
       if (!validInputsForm(form)) {
         statusMessage(validMessage);
         return;
       }
+      if (!checkBoxPolicy.checked) {
+        statusMessage("Примите соглашение на обработку персональных данных");
+        return;
+      }
+
+      statusMessage(loadMessage);
 
       const formData = new FormData(form);
       let body = {};
@@ -109,6 +107,7 @@ const sendForm = () => {
           }
           statusMessage(succesMessage);
           form.reset();
+          togglePopups(popupThank);
           setTimeout(() => {
             const popup = document.querySelector(".popup");
             popup.style.display = `none`;

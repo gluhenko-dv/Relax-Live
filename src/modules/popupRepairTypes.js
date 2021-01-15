@@ -1,5 +1,6 @@
 const popupRepairTypes = () => {
   const navListPopupRepair = document.querySelector(".nav-list-popup-repair");
+  const popupRepairTypesContentHeadDate = document.querySelector('.popup-repair-types-content__head-date');
   let tableData;
   const table = document.querySelector(
     ".popup-repair-types-content-table>table"

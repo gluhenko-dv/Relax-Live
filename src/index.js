@@ -15,6 +15,7 @@ import popupRepairTypes from "./modules/popupRepairTypes";
 import maskPhone from "./modules/phoneMask";
 import sliderCarouselFunc from "./modules/sliderCarousel";
 import sendForm from "./modules/sendForm";
+import accordion from "./modules/accordion";
 
 //togglePopups();
 
@@ -48,3 +49,5 @@ sliderCarouselFunc();
 maskPhone();
 
 sendForm();
+
+accordion();

@@ -15,19 +15,26 @@ const toggleMenu = () => {
     popupDialogMenu.style.transform = "";
   };
 
-  menuBtn.addEventListener("click", openMenu);
-  closeMenuBtn.addEventListener("click", closeMenu);
+  popupMenu.addEventListener("click", (e) => {
+    const target = e.target;
 
-  popupMenuNav.addEventListener("click", (event) => {
-    let target = event.target;
+    if (target === popupMenu) {
+      closeMenu();
+    }
 
     if (target.closest(".menu-link")) {
-      event.preventDefault();
+      e.preventDefault();
       closeMenu();
       if (target.matches(".no-overflow")) return;
       smoothScroll(target);
     }
+
+    if (target === closeMenuBtn) {
+      closeMenu();
+    }
   });
+
+  menuBtn.addEventListener("click", openMenu);
 };
 
 export default toggleMenu;

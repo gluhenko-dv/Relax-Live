@@ -1,4 +1,4 @@
-const formulaHover = () => {
+const formulaHover = (item) => {
   const formulaItemIcon = document.querySelectorAll(".formula-item__icon"),
     formulaItemPopup = document.querySelectorAll(".formula-item-popup");
 
