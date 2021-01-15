@@ -211,8 +211,30 @@ const sliderCarouselFunc = () => {
     ],
   });
   formulaCarousel.init();
+
+  /*   const repairTypesCarousel = new SliderCarousel({
+    main: ".repair-types-nav",
+    wrap: ".nav-list-repair",
+    infinity: true,
+    prev: "nav-arrow-repair-left_base",
+    next: "nav-arrow-repair-right_base",
+    responsive: [
+      {
+        breakpoint: 1024,
+        slidesToShow: 3,
+      },
+      {
+        breakpoint: 768,
+        slidesToShow: 2,
+      },
+      {
+        breakpoint: 576,
+        slidesToShow: 1,
+      },
+    ],
+  });
+  repairTypesCarousel.init(); */
 };
 
 sliderCarouselFunc();
-
 export default sliderCarouselFunc;
