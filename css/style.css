@@ -6945,25 +6945,7 @@ div.wave-block:nth-child(17):after {
   position: relative;
   padding: 0 57px;
 }
-.nav-wrap:before {
-  position: absolute;
-  right: 15px;
-  top: 0;
-  content: "";
-  height: 100%;
-  width: 212px;
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(rgba(251, 250, 248, 0)),
-    to(#fbfaf8)
-  );
-  background: linear-gradient(90deg, rgba(251, 250, 248, 0) 0%, #fbfaf8 100%);
-  z-index: 10;
-  opacity: 0.5;
-  pointer-events: none;
-}
+
 @media (min-width: 1025px) {
   .nav-wrap:before {
     display: none;

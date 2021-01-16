@@ -3,8 +3,7 @@ const toggleMenu = () => {
   const menuBtn = document.querySelector(".menu"),
     popupMenu = document.querySelector(".popup-menu"),
     popupDialogMenu = document.querySelector(".popup-dialog-menu"),
-    closeMenuBtn = document.querySelector(".close-menu"),
-    popupMenuNav = document.querySelector(".popup-menu-nav");
+    closeMenuBtn = document.querySelector(".close-menu");
 
   const openMenu = () => {
     popupMenu.style.visibility = "visible";

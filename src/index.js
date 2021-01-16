@@ -55,7 +55,5 @@ accordion();
 
 tabsSliders();
 
-window.addEventListener("resize", () => {
-  slider();
-});
+
 
