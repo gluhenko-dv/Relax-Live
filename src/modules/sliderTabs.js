@@ -4,10 +4,10 @@ const tabsSlider = (wrap, prev, next) => {
   const nextBtn = document.getElementById(next);
   let maxWidth;
   let maxItem = 0;
-  const slides = slidesWrap.querySelectorAll(".button_o");
+  if (!slidesWrap) return;
+  const slides = slidesWrap.querySelectorAll("button");
   slides.forEach((item) => {
     maxItem = item.offsetWidth > maxItem ? item.offsetWidth : maxItem;
-    console.log(" maxItem: ", maxItem);
     maxWidth = +item.offsetWidth;
   });
 
@@ -30,16 +30,8 @@ tabsSlider(
   "nav-arrow-repair-left_base",
   "nav-arrow-repair-right_base"
 );
-tabsSlider(
-  ".nav-designs",
-  "nav-arrow-designs_left",
-  "nav-arrow-designs_right"
-);
-tabsSlider(
-  "#scheme-list",
-  "nav-arrow-scheme_left",
-  "nav-arrow-scheme_right"
-);
+tabsSlider(".nav-designs", "nav-arrow-designs_left", "nav-arrow-designs_right");
+tabsSlider("#scheme-list", "nav-arrow-scheme_left", "nav-arrow-scheme_right");
 tabsSlider(
   ".nav-popup",
   "nav-arrow-popup-designs_left",
