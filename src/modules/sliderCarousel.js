@@ -187,31 +187,6 @@ const sliderCarouselFunc = () => {
     ],
   });
   partnersCarousel.init();
-
-  const formulaCarousel = new SliderCarousel({
-    main: ".formula-slider-wrap",
-    wrap: ".formula-slider",
-    infinity: true,
-    prev: "formula-arrow_left",
-    next: "formula-arrow_right",
-    slidesToShow: 3,
-    responsive: [
-      {
-        breakpoint: 1024,
-        slidesToShow: 3,
-      },
-      {
-        breakpoint: 768,
-        slidesToShow: 2,
-      },
-      {
-        breakpoint: 576,
-        slidesToShow: 1,
-      },
-    ],
-  });
-  formulaCarousel.init();
-
 };
 
 sliderCarouselFunc();

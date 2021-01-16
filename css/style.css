@@ -1340,7 +1340,7 @@ template,
   z-index: -1;
 }
 .formula-item-popup-05 {
-  min-height: 237px;
+  min-height: 220px;
 }
 @media (max-width: 575px) {
   .formula-item-popup-05 {
