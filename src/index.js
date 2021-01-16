@@ -16,6 +16,7 @@ import maskPhone from "./modules/phoneMask";
 import sliderCarouselFunc from "./modules/sliderCarousel";
 import sendForm from "./modules/sendForm";
 import accordion from "./modules/accordion";
+import tabsSlider from "./modules/sliderTabs";
 
 //togglePopups();
 
@@ -51,3 +52,9 @@ maskPhone();
 sendForm();
 
 accordion();
+
+window.addEventListener("resize", () => {
+  slider();
+});
+
+tabsSlider();

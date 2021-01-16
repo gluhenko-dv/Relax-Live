@@ -49,7 +49,9 @@ const tabs = (section, option) => {
       slide.classList.add("hide");
       if (indexBtn === indexSlide) {
         slide.classList.remove("hide");
-        previewPag(slide, indexBtn);
+        if (slide.parentNode.classList[0] === "designs-slider") {
+          previewPag(slide, indexBtn);
+        }
         if (slide.classList[0] === "scheme-slider__slide") return;
         sliders(slide.classList[0]);
       }

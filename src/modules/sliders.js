@@ -75,4 +75,13 @@ sliders("designs-slider");
 sliders("reviews-slider");
 sliders("problems-slider");
 
+if (window.screen.width < 1090) {
+  sliders("transparency-slider");
+}
+if (window.screen.width > 1090) {
+  document
+    .querySelectorAll(".transparency-item")
+    .forEach((item) => item.classList.remove("hide"));
+}
+
 export default sliders;

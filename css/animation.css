@@ -138,11 +138,6 @@
   transform: rotate(180deg) !important;
 }
 
-.rotate.problems-item-popup-1:before {
-  content: "";
-  transform: rotate(0) !important;
-}
-
 .wrapper {
   overflow: hidden;
 }
@@ -159,7 +154,6 @@
 
 @media (max-width: 1090px) {
   .transparency-slider-wrap {
-    display: flex;
     overflow: hidden;
   }
 

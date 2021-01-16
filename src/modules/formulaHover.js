@@ -1,19 +1,36 @@
-const formulaHover = (item) => {
-  const formulaItemIcon = document.querySelectorAll(".formula-item__icon"),
-    formulaItemPopup = document.querySelectorAll(".formula-item-popup");
-
+const hover = (item, hoverItem) => {
+  const hoverItems = document.querySelectorAll(hoverItem);
+  const items = document.querySelectorAll(item);
   const closePopup = () => {
-    formulaItemPopup.forEach((item) => {
+    hoverItems.forEach((item) => {
       item.style.visibility = "hidden";
       item.style.opacity = "0.3";
     });
   };
 
-  formulaItemIcon.forEach((item) => {
+  items.forEach((item, i) => {
     item.addEventListener("mouseover", () => {
-      const itemPopup = item.querySelector(".formula-item-popup");
-      itemPopup.style.visibility = "visible";
-      itemPopup.style.opacity = "1";
+      const windowHeight = window.screen.height / 2;
+
+      let translate = hoverItems[i].offsetHeight + item.offsetHeight - 40;
+      if (hoverItem === ".problems-item-popup") {
+        translate = hoverItems[i].offsetHeight + 100;
+      }
+
+      if (item.getBoundingClientRect().top < windowHeight) {
+        hoverItems[i].style.visibility = "visible";
+        hoverItems[i].classList.add("rotate");
+        hoverItems[i].style.opacity = "1";
+        hoverItems[
+          i
+        ].style.transform = `translate3d(0px, ${translate}px, 10px)`;
+        return;
+      }
+
+      hoverItems[i].style.visibility = "visible";
+      hoverItems[i].style.opacity = "1";
+      hoverItems[i].classList.remove("rotate");
+      hoverItems[i].style.transform = "";
     });
     item.addEventListener("mouseout", () => {
       closePopup();
@@ -21,4 +38,7 @@ const formulaHover = (item) => {
   });
 };
 
-export default formulaHover;
+hover(".formula-item", ".formula-item-popup");
+hover(".problems-item", ".problems-item-popup");
+
+export default hover;

@@ -1,7 +1,7 @@
-import togglePopups from './togglePopups';
+import togglePopups from "./togglePopups";
 const sendForm = () => {
   const statusMessageText = document.createElement("div");
-  const popupThank = document.querySelector('.popup-thank');
+  const popupThank = document.querySelector(".popup-thank");
 
   const errorMessage = "Что-то пошло не так...",
     loadMessage = "Отправляю ваше сообщение",
@@ -94,11 +94,20 @@ const sendForm = () => {
       statusMessage(loadMessage);
 
       const formData = new FormData(form);
-      let body = {};
+      const body = {};
 
       formData.forEach((val, key) => {
         body[key] = val;
       });
+
+      const postData = (body) =>
+        fetch("./server.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body),
+        });
 
       postData(body)
         .then((response) => {
@@ -119,15 +128,6 @@ const sendForm = () => {
         });
     });
   });
-
-  const postData = (body) =>
-    fetch("./server.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    });
 };
 
 export default sendForm;
