@@ -27,6 +27,7 @@ const tabsSlider = (wrap, prev, next) => {
     if (wrap === "#scheme-list") maxWidth -= 100;
     if (wrap === ".nav-list-repair") maxWidth -= 170;
     if (wrap === ".nav-list-popup-repair") maxWidth += 120;
+    if (wrap === ".nav-list-designs-popup") maxWidth -= 220;
   }
 
   prevBtn.addEventListener("click", (e) => {
@@ -62,6 +63,11 @@ tabsSlider(
   "nav-arrow-popup-repair_left",
   "nav-arrow-popup-repair_right"
 );
+tabsSlider(
+  ".nav-list-designs-popup",
+  "nav-arrow-popup-designs_left",
+  "nav-arrow-popup-designs_right"
+);
 
 window.addEventListener("resize", () => {
   tabsSlider(
@@ -79,6 +85,11 @@ window.addEventListener("resize", () => {
     ".nav-list-popup-repair",
     "nav-arrow-popup-repair_left",
     "nav-arrow-popup-repair_right"
+  );
+  tabsSlider(
+    ".nav-list-designs-popup",
+    "nav-arrow-popup-designs_left",
+    "nav-arrow-popup-designs_right"
   );
 });
 export default tabsSlider;
