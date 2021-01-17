@@ -1,6 +1,7 @@
 import smoothScroll from "./smoothScroll";
 const toggleMenu = () => {
-  const menuBtn = document.querySelector(".menu"),
+  const menuBtn = document.querySelectorAll(".menu"),
+    menuBtnFooter = document.querySelector(".menu__icon"),
     popupMenu = document.querySelector(".popup-menu"),
     popupDialogMenu = document.querySelector(".popup-dialog-menu"),
     closeMenuBtn = document.querySelector(".close-menu");
@@ -33,7 +34,13 @@ const toggleMenu = () => {
     }
   });
 
-  menuBtn.addEventListener("click", openMenu);
+  menuBtn.forEach((element) => {
+    element.addEventListener("click", (e) => {
+      if (e.target.matches(".menu__icon")) {
+        openMenu();
+      }
+    });
+  });
 };
 
 export default toggleMenu;

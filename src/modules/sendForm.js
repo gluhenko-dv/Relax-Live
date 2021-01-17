@@ -18,7 +18,7 @@ const sendForm = () => {
 
         target.style.border = `none`;
         target.setCustomValidity("");
-        if (target.name === "user_name") {
+        if (target.name === "username") {
           target.value = target.value.replace(/[^а-яёА-ЯЁ\s]/gi, "");
         }
         if (target.name === "user_phone") {

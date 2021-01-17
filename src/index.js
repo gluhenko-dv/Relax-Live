@@ -1,5 +1,6 @@
 "strict";
 
+import tabsSliders from "./modules/sliderTabs";
 import toggleMenu from "./modules/toggleMenu";
 import headerСontactsOpen from "./modules/headerContactsOpen";
 import formulaHover from "./modules/formulaHover";
@@ -16,7 +17,8 @@ import maskPhone from "./modules/phoneMask";
 import sliderCarouselFunc from "./modules/sliderCarousel";
 import sendForm from "./modules/sendForm";
 import accordion from "./modules/accordion";
-import tabsSliders from "./modules/sliderTabs";
+
+
 
 //togglePopups();
 

@@ -116,7 +116,7 @@ const sliderFormula = () => {
   let count = 0;
   const maxPositions = formulaSliderSlide.length - 3;
 
-  const carousel = () => {
+  const carousel = (count) => {
     if (window.screen.width < 564) {
       formulaSlider.style.transform = `translateX(-${(count + 1) * 100}%)`;
     } else {
@@ -124,7 +124,27 @@ const sliderFormula = () => {
     }
     formulaSliderSlide.forEach((item) => item.classList.remove("active"));
     formulaSliderSlide[count + 1].classList.add("active");
+    let hoverItem = formulaSliderSlide[count + 1];
+    hoverItem = hoverItem.querySelector(".formula-item-popup");
+
+    hoverItem.style.visibility = "visible !important";
+    hoverItem.style.opacity = "1 !important";
+    hoverItem.style.transform = "";
   };
+
+  formulaSliderSlide.forEach((item, i) => {
+    item.addEventListener("click", () => {
+      count = i - 1;
+      console.log(count);
+      if (count < 0) {
+        count = maxPositions;
+      }
+      if (count > maxPositions) {
+        count = 0;
+      }
+      carousel(count);
+    });
+  });
 
   prevButton.addEventListener("click", () => {
     count--;
@@ -132,7 +152,7 @@ const sliderFormula = () => {
     if (count < 0) {
       count = maxPositions;
     }
-    carousel();
+    carousel(count);
   });
 
   nextButton.addEventListener("click", () => {
@@ -141,9 +161,11 @@ const sliderFormula = () => {
     if (count > maxPositions) {
       count = 0;
     }
-    carousel();
+    carousel(count);
   });
 };
+
+
 
 sliderFormula();
 

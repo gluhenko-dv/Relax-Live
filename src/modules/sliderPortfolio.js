@@ -79,6 +79,7 @@ const sliderPortfolio = () => {
       slideTab = document.querySelectorAll(".portfolio-slider__slide.fade-tab"),
       buttonNext = document.getElementById("portfolio-arrow_right"),
       buttonPrev = document.getElementById("portfolio-arrow_left");
+    buttonNext.style.display = "";
 
     let count = 0,
       maxCount = slideTab.length - 1;
@@ -86,6 +87,9 @@ const sliderPortfolio = () => {
 
     if (window.screen.width > 1140) {
       maxCount -= 2;
+    }
+    if (window.screen.width < 1025) {
+      maxCount = slideTab.length - 2;
     }
 
     const checkCount = () => {
@@ -150,7 +154,7 @@ const sliderPortfolio = () => {
       } else if (count > 0 && count < maxCount) {
         buttonNext.style.pointerEvents = "";
         buttonPrev.style.pointerEvents = "";
-      } else if (count === maxCount) {
+      } else if (count >= maxCount) {
         buttonNext.style.pointerEvents = "none";
       }
     };
@@ -181,11 +185,18 @@ const sliderPortfolio = () => {
     slideOpen(slides);
   };
 
-  if (window.screen.width > 575) {
-    desctopVersion();
-  } else {
-    mobileVersion();
-  }
+  const portfolioSliderStart = () => {
+    if (window.screen.width > 575) {
+      desctopVersion();
+    } else {
+      mobileVersion();
+    }
+  };
+
+  window.addEventListener("resize", () => {
+    portfolioSliderStart();
+  });
+  portfolioSliderStart();
 };
 
 export default sliderPortfolio;
