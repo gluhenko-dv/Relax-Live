@@ -18,8 +18,6 @@ import sliderCarouselFunc from "./modules/sliderCarousel";
 import sendForm from "./modules/sendForm";
 import accordion from "./modules/accordion";
 
-
-
 //togglePopups();
 
 toggleMenu();
@@ -57,5 +55,39 @@ accordion();
 
 tabsSliders();
 
+window.addEventListener("resize", () => {
+  toggleMenu();
+  //открытие header контактов
+  headerСontactsOpen();
+  //formula hover effects
+  formulaHover();
+  //transparency
+  transparency();
 
+  linkList();
 
+  popupDesign();
+
+  slider();
+
+  tab();
+
+  buttonWide();
+
+  privacy();
+  // portfolio
+
+  sliderPortfolio();
+  /////// подгрузка таблиц
+  popupRepairTypes();
+
+  sliderCarouselFunc();
+
+  maskPhone();
+
+  sendForm();
+
+  accordion();
+
+  tabsSliders();
+});

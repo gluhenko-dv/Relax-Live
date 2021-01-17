@@ -22,6 +22,12 @@ const tabsSlider = (wrap, prev, next) => {
     if (wrap === "#scheme-list") maxWidth += 100;
     if (wrap === ".nav-list-popup-repair") maxWidth += 250;
   }
+  if (window.screen.width < 1025) {
+    if (wrap === ".nav-list-designs") maxWidth -= 200;
+    if (wrap === "#scheme-list") maxWidth -= 100;
+    if (wrap === ".nav-list-repair") maxWidth -= 170;
+    if (wrap === ".nav-list-popup-repair") maxWidth += 120;
+  }
 
   prevBtn.addEventListener("click", (e) => {
     transformWidth -= maxItem;
