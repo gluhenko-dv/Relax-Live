@@ -16,18 +16,26 @@ const tabsSlider = (wrap, prev, next) => {
   maxWidth += 140;
   let transformWidth = 0;
 
+  if (window.screen.width < 1025 && window.screen.width > 770) {
+    if (wrap === ".nav-list-designs") maxWidth -= 200;
+    if (wrap === "#scheme-list") maxWidth -= 100;
+    if (wrap === ".nav-list-repair") maxWidth -= 170;
+    if (wrap === ".nav-list-popup-repair") maxWidth += 450;
+    if (wrap === ".nav-list-designs-popup") maxWidth -= 220;
+  }
+  if (window.screen.width < 769 && window.screen.width > 576) {
+    if (wrap === ".nav-list-designs") maxWidth -= 200;
+    if (wrap === "#scheme-list") maxWidth -= 100;
+    if (wrap === ".nav-list-repair") maxWidth += 30;
+    if (wrap === ".nav-list-popup-repair") maxWidth += 450;
+    if (wrap === ".nav-list-designs-popup") maxWidth -= 220;
+  }
+
   if (window.screen.width < 575) {
     maxWidth += 260;
     if (wrap === ".nav-list-designs") maxWidth -= 100;
     if (wrap === "#scheme-list") maxWidth += 100;
     if (wrap === ".nav-list-popup-repair") maxWidth += 250;
-  }
-  if (window.screen.width < 1025) {
-    if (wrap === ".nav-list-designs") maxWidth -= 200;
-    if (wrap === "#scheme-list") maxWidth -= 100;
-    if (wrap === ".nav-list-repair") maxWidth -= 170;
-    if (wrap === ".nav-list-popup-repair") maxWidth += 120;
-    if (wrap === ".nav-list-designs-popup") maxWidth -= 220;
   }
 
   prevBtn.addEventListener("click", (e) => {
