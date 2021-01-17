@@ -7071,6 +7071,11 @@ div.wave-block:nth-child(17):after {
     bottom: 90px;
   }
 }
+@media (max-width: 578px) {
+  .slider-counter-repair {
+    bottom: 0px;
+  }
+}
 .close {
   position: absolute;
   top: 47px;
