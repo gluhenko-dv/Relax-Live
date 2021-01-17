@@ -91,6 +91,9 @@ const sliderPortfolio = () => {
     if (window.screen.width < 1025) {
       maxCount = slideTab.length - 2;
     }
+    if (window.screen.width < 769) {
+      maxCount = slideTab.length - 1;
+    }
 
     const checkCount = () => {
       if (count === 0) {
