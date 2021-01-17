@@ -23,6 +23,7 @@ const toggleMenu = () => {
     }
 
     if (target.closest(".menu-link")) {
+
       e.preventDefault();
       closeMenu();
       if (target.matches(".no-overflow")) return;
